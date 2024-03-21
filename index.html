@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!--Lag en funksjon som tar i mot et array av nummere som parameter.
+        Funksjonen skal returne gjennomsnittet av tallene i arrayet, 
+        og svaret skal kunne vises i console eller på en nettside-->
+
+    <script>
+        let app = document.getElementById('app');
+        let numArray = [5, 8, 10, 14, 2, 6];
+        let numArray2 = [2, 5, 6, 14, 2, 6];
+        let numArray3 = [5, 19, 10, 14, 2, 6];
+        let numArray4 = [6, 8, 10, 123, 2, 1];
+
+        updateView()
+
+        function updateView(){
+        app.innerHTML = /*html*/`
+        <button onclick="calculateNum(numArray)">Regn ut gjennomsnittet</button>
+        `;
+        }
+
+        function calculateNum(arrayetMitt){
+            let sum = 0;
+
+            numArray = [5, 8, 10, 14, 2, 6];
+
+            for (let i = 0; i < arrayetMitt.length; i++) {
+                sum += arrayetMitt[i];
+            }
+
+            app.innerHTML += sum / arrayetMitt.length;
+            console.log(arrayetMitt)
+        }
+    </script>
+</body>
+</html>
